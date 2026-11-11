@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+db.sqlite3
+backup.sql
+backup.bat
+.env
+.vscode/
+media/

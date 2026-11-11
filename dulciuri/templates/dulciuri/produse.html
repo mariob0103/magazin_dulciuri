@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <title>Titlu</title>
+    </head>
+    <body>
+        <h1>Afisaj</h1>
+        <span>
+            Pagina {{ pagina.number }} din {{ pagina.paginator.num_pages }}.
+        </span>
+        {% for prod in pagina.object_list %}
+            <p>{{prod}}</p>
+        {% endfor %}
+        {% if pagina.has_previous %}
+            <a href="?pagina={{ pagina.previous_page_number }}">« Anterior</a>
+        {% endif %}
+        {% if pagina.has_next %}
+            <a href="?pagina={{ pagina.next_page_number }}">Următor »</a>
+        {% endif %}      
+    </body>
+</html>

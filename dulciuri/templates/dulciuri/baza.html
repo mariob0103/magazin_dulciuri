@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block titlu %}Magazin de dulciuri{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'dulciuri/css/nav.css' %}">
+</head>
+
+<body>
+
+    
+<header>
+    <h1>Magazin de dulciuri</h1>
+    <p>Bine ati venit in magazinul nostru!</p>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'index' %}">Acasa</a>
+                <ul>
+                    <li><a href="{% url 'index' %}#prezentare">Prezentare</a></li>
+                    <li><a href="{% url 'index' %}#categorii">Categorii</a></li>
+                    <li><a href="{% url 'index' %}#promotii">Promotii</a></li>
+                    <li><a href="{% url 'index' %}#noutati">Noutati</a></li>
+                    <li><a href="{% url 'index' %}#recomandari">Recomandari</a></li>
+                </ul>
+            </li>
+
+            <li><a href="{% url 'produse' %}">Produse</a></li>
+
+            <li><a href="{% url 'despre' %}">Despre noi</a>
+                <ul>
+                    <li><a href="{% url 'istoric' %}">Istoric</a></li>
+                </ul>
+            </li>
+
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'cos_virtual' %}">Cos virtual</a></li>
+
+            <li><a href="{% url 'info' %}">Info</a></li>
+            <li><a href="{% url 'log' %}">Log</a></li>
+            <li><a href="{% url 'mesaje' %}">Mesaje</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+    <main>
+        {% block continut %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>Magazin de dulciuri - Toate drepturile rezervate.</p>
+    </footer>
+
+</body>
+</html>
